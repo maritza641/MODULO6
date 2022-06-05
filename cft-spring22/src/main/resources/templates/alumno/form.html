@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8" />
+	<title>Formulario Alumno</title>
+</head>
+<body>
+
+	<form th:action="@{/alumno/procesar}" th:object="${alumno}" method="post">
+		<input type="hidden" th:field="*{id}" />
+		<p>
+			Nombre: <input type="text" th:field="*{nombre}" />
+			<span style="color: red;" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" />
+		</p>
+		
+		<p>
+			Fecha Nacimiento: <input type="date" th:field="*{fechaNacimiento}" />
+			<span style="color: red;" th:if="${#fields.hasErrors('fechaNacimiento')}" th:errors="*{fechaNacimiento}" />
+		</p>
+		
+		    Carrera: 
+		<select th:field="*{carrera}">
+			<option th:each="carrera : ${carreras}" th:value="${carrera.id}" th:text="${carrera.nombre}" />
+		</select>
+		
+		<button type="submit">Guardar</button>
+	</form>
+
+</body>
+</html>
