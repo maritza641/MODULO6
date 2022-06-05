@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Listado Proveedores</title>
+</head>
+<body>
+	<h1>Proveedores</h1>
+	
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>RUT</th>
+				<th>Razón Social</th>
+				<th>Acciones</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr data-th-each="proveedor : ${proveedores}">
+				<td data-th-text="${proveedor.id}" />
+				<td data-th-text="${proveedor.rut}" />
+				<td data-th-text="${proveedor.razonSocial}" />
+				<td>
+					<a class="btn btn-primary" th:href="@{/proveedor/editar/{id}(id=${proveedor.id})}">Editar</a>
+					<a class="btn btn-primary" th:href="@{/proveedor/eliminar/{id}(id=${proveedor.id})}">Eliminar</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<a th:href="@{/proveedor/nuevo}" style="text-align: center;" class="btn btn-primary">Nuevo Proveedor</a>
+</body>
+</html>

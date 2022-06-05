@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Facturas</title>
+</head>
+<body>
+	<h1>Facturas</h1>
+	
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>FECHA</th>
+				<th>FOLIO</th>
+				<th>MONTO</th>
+				<th>RUT</th>
+				<th>FECHA</th>
+				<th>Razón Social</th>
+				<th>Acciones</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr data-th-each="factura : ${facturas}">
+				<td data-th-text="${factura.id}" />
+				<td data-th-text="${factura.fecha}" />
+				<td data-th-text="${factura.folio}" />
+				<td data-th-text="${factura.monto}" />
+				<td data-th-text="${factura.proveedor.rut}" />
+				<td data-th-text="${factura.proveedor.razonSocial}" />
+				<td>
+					<a class="btn btn-primary" th:href="@{/factura/editar/{id}(id=${factura.id})}">Editar</a>
+					<a class="btn btn-primary" th:href="@{/factura/eliminar/{id}(id=${factura.id})}">Eliminar</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<a th:href="@{/factura/nueva}" style="text-align: center;" class="btn btn-primary">Nueva Factura</a>
+</body>
+</html>

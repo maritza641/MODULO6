@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Factura</title>
+</head>
+<body>
+		<h1>Ingreso Factura</h1>
+	
+	<form data-th-action="@{/factura/procesar}" data-th-object="${factura}" method="post">
+		<input type="hidden" data-th-field="*{id}" />
+		FOLIO: <input type="number" data-th-field="*{folio}" /> <br />
+		FECHA: <input type="date" data-th-field="*{fecha}" /> <br />
+		MONTO: <input type="number" data-th-field="*{monto}" /> <br />
+		
+		PROVEEDOR:
+		<select data-th-field="*{proveedor}">
+			<option
+				data-th-each="proveedor : ${proveedores}"
+				data-th-text="${proveedor.razonSocial}"
+				data-th-value="${proveedor.id}"
+			/>
+		</select>
+		
+		<br />
+		<button class="btn btn-success" type="submit">Guardar</button>
+	</form>
+</body>
+</html>
