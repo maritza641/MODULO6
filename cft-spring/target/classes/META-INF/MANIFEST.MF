@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Built-By: Maritza Carcamo
+Build-Jdk: 17.0.2
+Implementation-Title: cft-spring
+Implementation-Version: 1.0
+Implementation-Vendor-Id: cl.aiep.java
+Implementation-URL: https://spring.io/projects/spring-boot/cft-spring
+Created-By: Maven Integration for Eclipse
+

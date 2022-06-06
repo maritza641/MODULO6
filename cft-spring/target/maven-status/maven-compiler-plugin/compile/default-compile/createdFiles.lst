@@ -1,0 +1,5 @@
+cl\aiep\java\cft\CftController.class
+cl\aiep\java\cft_repository\AlumnoRepositoryImp.class
+cl\aiep\java\cft_repository\AlumnoRepository.class
+cl\aiep\java\cft\CftSpringApplication.class
+cl\aiep\java\cft\Alumno.class
